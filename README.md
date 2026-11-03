@@ -3,8 +3,27 @@ A (lost) Meme picture collection from the gdo creator. See TikTok for more memes
 
 # Memedize (For Humans)
 
-Welcome to more MayMay! Browse the local meme images; click one to open the
-original file. In text chat, the overview returns the website link instead.
+Welcome to more MayMay! Hover over a meme for a small zoom and click it for a
+larger preview, with a link to the original file. In text chat, the overview
+returns the website link instead.
+
+## Ideas
+
+- Add **Lost & Found** to the left menu: a shared place to find and collect
+  memes and videos. An entry can start with a link or a description of a
+  half-remembered item. People discuss it and add links; a found item becomes
+  a collection entry with its title, tags and context.
+- Let people submit their favorite memes and videos for a shared collection,
+  linking to releases on established platforms. Memedize is the community
+  around them, not a replacement publishing platform.
+- Let people describe a half-remembered meme or video in a forum discussion so
+  others can help find it.
+- Rate archived favorites and explore the community's discoveries.
+- Subscribe to meme releases. Add per-user support; the exact subscription
+  scope, delivery channels and user-specific features remain open.
+
+These features are planned ideas, not implemented yet. Submission, forum
+integration, and rating rules are open for design.
 
 ## Methods
 
@@ -24,7 +43,9 @@ original file. In text chat, the overview returns the website link instead.
 
 - `memedize.overview` is public and reads regular PNG, JPEG, GIF and WebP
   images from the module's `memes/` folder in deterministic filename order.
-  HTML displays escaped clickable image links; textual modes return only the
+  HTML displays escaped clickable image links, enhanced with a hover zoom and
+  a dismissible click preview; without JavaScript the link opens the original.
+  Textual modes return only the
   absolute overview URL. Filenames with Unicode and spaces remain clickable.
   Other files, including archives, are never listed.
 

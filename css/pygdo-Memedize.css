@@ -10,4 +10,23 @@
     width: 100%;
     height: 14rem;
     object-fit: contain;
+    transition: transform 180ms ease;
+}
+
+@media (hover: hover) {
+    .memedize-gallery a:hover img { transform: scale(1.08); }
+}
+
+.memedize-preview {
+    max-width: 95vw;
+    max-height: 95vh;
+    text-align: center;
+}
+
+.memedize-preview::backdrop { background: rgba(0, 0, 0, .8); }
+.memedize-preview img { display: block; max-width: 85vw; max-height: 78vh; object-fit: contain; }
+.memedize-preview nav { display: flex; justify-content: center; gap: 1rem; padding: .5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+    .memedize-gallery img { transition: none; }
 }
