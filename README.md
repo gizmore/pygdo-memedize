@@ -21,6 +21,14 @@ returns the website link instead.
 - Rate archived favorites and explore the community's discoveries.
 - Subscribe to meme releases. Add per-user support; the exact subscription
   scope, delivery channels and user-specific features remain open.
+- Planned chat flow: `$memedize.create <idea>` requests a meme from Mira's
+  `$meme` skill. Once created, `$memedize.neu` announces the release to
+  channels that explicitly opted in through `$memedize.abbo`. Channels are
+  unsubscribed by default. A create request costs 100 credits by default;
+  release announcements require staff. The local create and release methods
+  are prepared but not yet deployed. For now creation is restricted to staff
+  and charges nothing; atomic charging, failure handling, opening requests to
+  others and per-user subscriptions remain open.
 
 These features are planned ideas, not implemented yet. Submission, forum
 integration, and rating rules are open for design.
@@ -42,7 +50,7 @@ integration, and rating rules are open for design.
 ## Methods
 
 - `memedize.overview` is public and reads regular PNG, JPEG, GIF and WebP
-  images from the module's `memes/` folder in deterministic filename order.
+  images from the module's `memes/` folder and subfolders in deterministic filename order.
   HTML displays escaped clickable image links, enhanced with a hover zoom and
   a dismissible click preview; without JavaScript the link opens the original.
   Textual modes return only the

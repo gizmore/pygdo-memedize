@@ -13,8 +13,12 @@ if TYPE_CHECKING:
 
 class module_memedize(GDO_Module):
 
+    def gdo_dependencies(self) -> list:
+        return ['chat', 'mira']
+
     def gdo_classes(self) -> list[type[GDO]]:
-        return []
+        from gdo.memedize.GDO_MemeSubscription import GDO_MemeSubscription
+        return [GDO_MemeSubscription]
 
     async def gdo_install(self):
         pass

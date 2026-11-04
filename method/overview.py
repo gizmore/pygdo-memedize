@@ -18,10 +18,11 @@ class overview(Method):
         folder = Path(__file__).resolve().parent.parent / 'memes'
         images = []
         if folder.is_dir():
-            for image in sorted(folder.iterdir(), key=lambda p: (p.name.casefold(), p.name)):
-                if image.is_symlink() or not image.is_file() or image.suffix.lower() not in {'.png', '.jpg', '.jpeg', '.gif', '.webp'}:
+            for image in sorted(folder.rglob('*'), key=lambda p: (str(p.relative_to(folder)).casefold(), str(p.relative_to(folder)))):
+                relative = image.relative_to(folder)
+                if any((folder.joinpath(*relative.parts[:i])).is_symlink() for i in range(1, len(relative.parts) + 1)) or not image.is_file() or image.suffix.lower() not in {'.png', '.jpg', '.jpeg', '.gif', '.webp'}:
                     continue
-                href = Application.web_root().rstrip('/') + '/gdo/memedize/memes/' + quote(image.name, safe='')
+                href = Application.web_root().rstrip('/') + '/gdo/memedize/memes/' + quote(relative.as_posix(), safe='/')
                 link = escape(href, quote=True)
                 name = escape(image.stem, quote=True)
                 images.append(f'<a href="{link}"><img src="{link}" alt="{name}" loading="lazy"></a>')

@@ -1,0 +1,8 @@
+msg_memedize_subscribed = "Dieser Kanal hat neue Memes abonniert."
+msg_memedize_unsubscribed = "Dieser Kanal hat neue Memes abbestellt."
+msg_memedize_announcement = "Neues Meme: %s"
+msg_memedize_announced = "Meme-Ankündigung für %s abonnierte Kanäle eingereiht."
+err_memedize_file = "Das Meme muss eine reguläre Bilddatei im Meme-Ordner sein."
+err_memedize_dog_only = "Meme-Anfragen sind über Dog verfügbar."
+msg_memedize_queued = "Meme-Anfrage für Mira eingereiht. Credits werden noch nicht abgebucht."
+err_memedize_idea = "Die Meme-Idee muss zwischen 1 und 1000 Zeichen lang sein."
