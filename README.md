@@ -49,13 +49,17 @@ integration, and rating rules are open for design.
 
 ## Methods
 
-- `memedize.overview` is public and reads regular PNG, JPEG, GIF and WebP
-  images from the module's `memes/` folder and subfolders in deterministic filename order.
+- `memedize.overview` is public and displays one `YYYY-MM-DD` directory per
+  page, newest first, with a choice of days, links to older/newer days and to browse the directory.
+  A day with many images is split into pages of 24; page links retain the day.
+  It reads regular PNG, JPEG, GIF and WebP images in deterministic filename order.
   HTML displays escaped clickable image links, enhanced with a hover zoom and
   a dismissible click preview; without JavaScript the link opens the original.
   Textual modes return only the
   absolute overview URL. Filenames with Unicode and spaces remain clickable.
   Other files, including archives, are never listed.
+- New memes are saved under the local creation date. Legacy files are archived
+  in `2023-09-23`.
 
 ## GDTs
 

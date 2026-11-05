@@ -4,3 +4,4 @@ node_modules/
 yarn.lock
 *secret*
 memes/sessions.zip
+memes/*/sessions.zip

@@ -33,12 +33,13 @@ class module_memedize_Test(GDOTestCase):
     def test_02_overview_web(self):
         out = web_plug("memedize.overview.html?_lang=en").exec()
         self.assertIn('Welcome to more MayMay!', out)
-        self.assertIn('href="/gdo/memedize/memes/01_sawtooth_tiger.png"', out)
+        self.assertIn('href="/gdo/memedize/memes/2023-09-23/01_sawtooth_tiger.png"', out)
+        self.assertIn('Browse directory', out)
         self.assertIn('<img', out)
         self.assertNotIn('sessions.zip', out)
-        image = web_plug('gdo/memedize/memes/01_sawtooth_tiger.png').exec()
+        image = web_plug('gdo/memedize/memes/2023-09-23/01_sawtooth_tiger.png').exec()
         self.assertTrue(isinstance(image, bytes) and image.startswith(b'\x89PNG\r\n\x1a\n'))
-        image = web_plug('gdo/memedize/memes/02_H%C3%A4nsel_und_Gretel__undRobin.png').exec()
+        image = web_plug('gdo/memedize/memes/2023-09-23/02_H%C3%A4nsel_und_Gretel__undRobin.png').exec()
         self.assertTrue(isinstance(image, bytes) and image.startswith(b'\x89PNG\r\n\x1a\n'))
 
 
