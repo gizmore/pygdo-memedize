@@ -40,4 +40,4 @@ class module_memedize(GDO_Module):
         self.add_css('css/pygdo-Memedize.css')
 
     def gdo_init_sidebar(self, page: 'GDT_Page'):
-        page._left_bar.add_field(GDT_Link().href(self.href('overview')).text('module_memedize'))
+        page._left_bar.add_field(GDT_Link().href(self.href('overview')).text('module_memedize').icon('color'))
